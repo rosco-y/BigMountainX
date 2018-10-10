@@ -11,7 +11,8 @@
         <CommandBar>
             <AppBarButton
                 x:Name="cmdClose"
-                Click="cmdClose_Click"
+                Command="{Binding}"
+                CommandParameter="exit program"
                 Label="Close"
                 ToolTipService.ToolTip="Quit BigMountainX"
                 Icon="HangUp">

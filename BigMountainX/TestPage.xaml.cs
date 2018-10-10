@@ -23,14 +23,35 @@ namespace BigMountainX
     /// </summary>
     public sealed partial class TestPage : Page
     {
+        CommandDispatcher _dispatcher;
+
         public TestPage()
         {
             this.InitializeComponent();
+            this.Loaded += TestPage_Loaded;
+            _dispatcher = new CommandDispatcher();
+            _dispatcher.DoSomething += testpage_commands;
+        }
+
+        void TestPage_Loaded(object sender, RoutedEventArgs args)
+        {
+            this.DataContext = _dispatcher;
         }
 
         void cmdClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
         }
+
+        async void testpage_commands(string command)
+        {
+            if (command.ToLower() == "exit program")
+            {
+                MessageDialog md = new MessageDialog("Closing BigMountainX.");
+                await md.ShowAsync();
+                Application.Current.Exit();
+            }
+        }
+
     }
 }
