@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="BigMountainX.MainPage"
+    x:Class="BigMountainX.TestPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BigMountainX"
@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Image
+            x:Name="control_image"
+                Source="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
     </Grid>
 </Page>
