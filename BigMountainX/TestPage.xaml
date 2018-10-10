@@ -7,7 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton
+                x:Name="cmdClose"
+                Click="cmdClose_Click"
+                Label="Close"
+                ToolTipService.ToolTip="Quit BigMountainX"
+                Icon="HangUp">
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid>
         <Image
             x:Name="control_image"
